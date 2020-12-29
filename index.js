@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '플립이의 봇, 플립봇입니다.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -37,21 +37,19 @@ client.on('message', (message) => {
   }
 
   if(message.content == 'embed') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
+    let img = 'https://cdn.discordapp.com/avatars/723381490469175407/bf2caf9f2198b184ee454ec4443ea944.jpg?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('타이틀')
+      .setTitle('청월여객 사원 모집안내')
       .setURL('http://www.naver.com')
-      .setAuthor('나긋해', img, 'http://www.naver.com')
+      .setAuthor('청월여객의 사원을 모집합니다.', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
-      .addField('Inline field title', 'Some value here')
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
+      .addField('청월여객에서 사원을 모집합니다.', '')
+      .addField('마감은 20xx년 x월 x일까지입니다.', '', true)
+      .addField('저희 청월여객은 많은 인재들을 기다리고 있습니다.', ', true)
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('청월여객 ㅣ 플립봇', img)
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
@@ -68,9 +66,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
-      .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setAuthor('Help of 플립봇', helpImg)
+      .setColor('#40E0D0')
+      .setFooter(`플립봇`)
       .setTimestamp()
     
     commandList.forEach(x => {
