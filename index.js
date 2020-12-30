@@ -53,32 +53,7 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('나긋해가 만듬', img)
 
-    message.channel.send(embed)
-  } else if(message.content == '!help') {
-    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
-    let commandList = [
-      {name: '!help', desc: 'help'},
-      {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
-      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
-      {name: '!청소', desc: '텍스트 지움'},
-      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
-    ];
-    let commandStr = '';
-    let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
-      .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
-      .setTimestamp()
-    
-    commandList.forEach(x => {
-      commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;
-    });
-
-    embed.addField('Commands: ', commandStr);
-
+      
     message.channel.send(embed)
   } else if(message.content == '!초대코드2') {
     client.guilds.array().forEach(x => {
